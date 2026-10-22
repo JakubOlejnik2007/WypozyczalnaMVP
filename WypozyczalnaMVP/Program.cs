@@ -18,7 +18,12 @@
         public int id { get; set; }
         public string osoba { get; set; }
         public DateTime data { get; set; }
-    }
+        public Wypozyczenie(int id, string osoba)
+        {
+            id = this.id;
+            osoba = this.osoba;
+            data = DateTime.Now;
+        }
     public class Wypozyczalnia
     {
         public List<string> historia;
