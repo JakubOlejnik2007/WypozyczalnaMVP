@@ -40,8 +40,8 @@ namespace WypozyczalnaMVP
         public void ListaSprzetow()
         {
             foreach (var s in sprzety)
-                Console.WriteLine($"{s.Opis()} | " +
-                    (CzyDostepny(s.Id) ? "Dostępny" : "Wypożyczony"));
+                Console.WriteLine($"{s.Opis} | " +
+                    (CzyDostepny(s.id) ? "Dostępny" : "Wypożyczony"));
         }
 
         public void ListaWypozyczen()
@@ -50,7 +50,7 @@ namespace WypozyczalnaMVP
                 Console.WriteLine("Brak wypożyczeń.");
 
             foreach (var w in historia)
-                Console.WriteLine(w.Opis());
+                Console.WriteLine(w.Opis);
         }
     }
 }

@@ -10,11 +10,12 @@ namespace WypozyczalnaMVP
     {
         public int id { get; set; }
         public string nazwa { get; set; }
+        public string Opis { get; set; } = string.Empty;
         public bool czyDostepne { get; set; } //false - nie, true - tak
         public Sprzet(int id, string nazwa)
         {
-            id = this.id;
-            nazwa = this.nazwa;
+            this.id = id;
+            this.nazwa = nazwa;
             czyDostepne = true;
         }
     }
