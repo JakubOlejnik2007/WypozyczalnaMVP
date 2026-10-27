@@ -4,6 +4,8 @@
     {
         static void Main(string[] args)
         {
+            Wypozyczalnia wypozyczalnia = new Wypozyczalnia();
+
             Console.WriteLine("Witaj w naszej wypożyczalni");
             Console.WriteLine("Wybierz opcję:");
             Console.WriteLine("[1] Wypożycz");
@@ -27,22 +29,22 @@
                         idSprzetu = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Podaj imię i nazwisko osoby wypożyczającej:");
                         nazwaOsoby = Console.ReadLine();
-                        Wypozycz(idSprzetu, nazwaOsoby);
+                        wypozyczalnia.Wypozycz(idSprzetu, nazwaOsoby);
                         break;
                     case 2:
                         Console.WriteLine("Podaj numer sprzętu, który chcesz zwrócić:");
                         idSprzetu = Convert.ToInt32(Console.ReadLine());
-                        Zwroc(idSprzetu);
+                        wypozyczalnia.Zwroc(idSprzetu);
                         break;
                     case 3:
                         Console.WriteLine("Podaj numer sprzętu, którego dostępność chcesz sprawdzić");
                         idSprzetu = Convert.ToInt32(Console.ReadLine());
                         break;
                     case 4:
-                        ListaSprzetow();
+                        wypozyczalnia.ListaSprzetow();
                         break;
                     case 5:
-                        ListaWypozyczen();
+                        wypozyczalnia.ListaWypozyczen();
                         break;
                     case 6:
                         Console.WriteLine("Dziękujemy za skorzystanie z naszej wypożyczalni!");
