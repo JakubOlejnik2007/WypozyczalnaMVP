@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System;
 
 namespace WypozyczalnaMVP
 {
@@ -11,19 +7,32 @@ namespace WypozyczalnaMVP
         public int Id { get; set; }
         public int idSprzetu { get; set; }
         public string osoba { get; set; }
-        public string Opis { get; set; } = string.Empty;
+        public string Opis { get; set; }
         public DateTime data { get; set; }
         public bool Aktywne { get; private set; } = true;
+
         public Wypozyczenie(int id, int idSprzetu, string osoba)
         {
-            this.Id = id;
+            Id = id;
             this.idSprzetu = idSprzetu;
             this.osoba = osoba;
-            this.data = DateTime.Now;
+            data = DateTime.Now;
+            Aktywne = true;
         }
+
         public void Zakoncz()
         {
+            if (!Aktywne)
+            {
+                throw new InvalidOperationException("To wypożyczenie zostało już zakończone.");
+            }
+
             Aktywne = false;
+        }
+
+        public string Opis()
+        {
+            return $"ID wypożyczenia: {Id} | " + $"ID sprzętu: {idSprzetu} | " + $"Osoba: {osoba} | " + $"Data: {data} | " + $"Status: {(Aktywne ? "Aktywne" : "Zakończone")}";
         }
     }
 }
