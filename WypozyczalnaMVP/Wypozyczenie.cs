@@ -7,7 +7,6 @@ namespace WypozyczalnaMVP
         public int Id { get; set; }
         public int idSprzetu { get; set; }
         public string osoba { get; set; }
-        public string Opis { get; set; }
         public DateTime data { get; set; }
         public bool Aktywne { get; private set; } = true;
 
