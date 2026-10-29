@@ -40,6 +40,7 @@
                     case 3:
                         Console.WriteLine("Podaj numer sprzętu, którego dostępność chcesz sprawdzić");
                         idSprzetu = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine($"Dostępność sprzętu {idSprzetu}: { (wypozyczalnia.CzyDostepny(idSprzetu) ? "Dostępny" : "Niedostępny") }");
                         break;
                     case 4:
                         wypozyczalnia.ListaSprzetow();
