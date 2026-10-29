@@ -50,7 +50,7 @@ namespace WypozyczalnaMVP
                 Console.WriteLine("Brak wypożyczeń.");
 
             foreach (var w in historia)
-                Console.WriteLine(w.Opis);
+                Console.WriteLine(w.Opis());
         }
     }
 }

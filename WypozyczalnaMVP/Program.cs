@@ -18,7 +18,11 @@
 
             while (true)
             {
-                int wybor = Convert.ToInt32(Console.ReadLine());
+                if (!int.TryParse(Console.ReadLine(), out int wybor))
+                {
+                    Console.WriteLine("Wpisz poprawny numer opcji.");
+                    continue;
+                }
                 int exit = 0;
                 int idSprzetu = 0;
                 string nazwaOsoby;
@@ -27,6 +31,12 @@
                 {
                     case 1:
                         Console.WriteLine("Podaj numer sprzętu, który chcesz wypożyczyć:");
+
+                        if (!int.TryParse(Console.ReadLine(), out idSprzetu))
+                        {
+                            Console.WriteLine("Numer sprzętu musi być liczbą całkowitą.");
+                            continue;
+                        }
                         idSprzetu = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Podaj imię i nazwisko osoby wypożyczającej:");
                         nazwaOsoby = Console.ReadLine();
