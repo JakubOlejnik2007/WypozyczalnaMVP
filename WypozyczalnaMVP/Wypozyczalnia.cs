@@ -40,8 +40,8 @@ namespace WypozyczalnaMVP
         public void ListaSprzetow()
         {
             foreach (var s in sprzety)
-                Console.WriteLine($"{s.Opis} | " +
-                    (CzyDostepny(s.id) ? "Dostępny" : "Wypożyczony"));
+                Console.WriteLine($"{s.nazwa} \t| " +
+                    (CzyDostepny(s.id) ? "Dostępny" : "Wypożyczony") + $"\t| {s.Opis}");
         }
 
         public void ListaWypozyczen()
